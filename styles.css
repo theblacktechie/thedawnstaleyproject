@@ -288,8 +288,8 @@ svg text { font-family: var(--font); }
   margin-left: auto;
   margin-right: auto;
 }
-.home-hero .display-subhead { max-width: 700px; }
-.home-hero .body-lead { max-width: 620px; }
+.home-hero .display-subhead { max-width: 1100px; }
+.home-hero .body-lead { max-width: 700px; }
 .home-hero .cta-row { justify-content: center; }
 .home-title {
   letter-spacing: -0.04em;
@@ -454,7 +454,7 @@ svg text { font-family: var(--font); }
 }
 .timeline-svg {
   width: 100%;
-  max-width: 980px;
+  max-width: 1200px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -746,6 +746,7 @@ a.card:hover {
   text-align: center;
   width: 100%;
 }
+.footer-short { display: none; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
@@ -834,8 +835,16 @@ a.card:hover {
     white-space: nowrap;
   }
   .project-container .display-title {
-    font-size: 28px;
-    white-space: normal;
+    font-size: 26px;
+    white-space: nowrap;
+  }
+  .project-container .display-title .title-break {
+    display: block;
+    height: 6px;
+    width: 100%;
+  }
+  .project-container .title-aside {
+    display: block;
   }
   .display-subhead { font-size: 15px; }
 
@@ -909,9 +918,15 @@ a.card:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 24px auto 24px;
+    margin: 8px auto 16px;
     position: relative;
     max-width: 320px;
+  }
+  .timeline-wrap {
+    margin: 0;
+  }
+  .road-container .title-row {
+    margin-bottom: 12px;
   }
   .timeline-vertical::before {
     content: '';
@@ -997,18 +1012,22 @@ a.card:hover {
 
   /* Footer: single centered line, smaller font for fit */
   .site-footer {
-    font-size: 9.5px;
+    font-size: 10px;
     letter-spacing: 0.04em;
-    padding: 14px var(--pad-x);
+    padding: 12px var(--pad-x);
   }
-  .footer-line { text-align: center; }
+  .footer-full { display: none; }
+  .footer-short { display: block; }
+  .footer-line {
+    text-align: center;
+  }
 }
 
 @media (max-width: 380px) {
   .display-title { font-size: 32px; }
   .home-title { font-size: 30px; }
   .project-container .display-title { font-size: 24px; }
-  .site-footer { font-size: 8.5px; }
+  .site-footer { font-size: 9.5px; }
 }
 
 /* ---------- Reduced motion ---------- */
