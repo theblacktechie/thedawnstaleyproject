@@ -121,6 +121,8 @@ main {
 
 .tab-content { display: none; }
 .tab-content.active { display: block; }
+.tab-content:focus,
+.tab-content:focus-visible { outline: none; }
 
 /* =========================================================
    PAGE HEAD (used on Project, Road, Work, About)
@@ -459,7 +461,7 @@ main {
    ROAD TAB
    ========================================================= */
 .timeline-wrap.timeline-horizontal {
-  margin: 18px auto 28px;
+  margin: 32px auto 40px;
   max-width: 1400px;
   width: 100%;
 }
@@ -467,7 +469,35 @@ main {
 .timeline-horizontal svg {
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 580px;
+}
+
+/* Road tab fills viewport vertically so it doesn't feel bottom-empty */
+#road.active {
+  display: flex;
+  flex-direction: column;
+  min-height: 70vh;
+}
+
+#road .page-head {
+  flex: 0 0 auto;
+}
+
+#road .timeline-wrap.timeline-horizontal {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#road .timeline-wrap.timeline-horizontal svg {
+  max-width: 100%;
+}
+
+#road .legend {
+  flex: 0 0 auto;
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
 
 .year-tick line { stroke: var(--ink); stroke-width: 1; }
@@ -563,8 +593,8 @@ main {
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-bottom: 26px;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
 .work-card {
@@ -572,7 +602,7 @@ main {
   text-decoration: none;
   color: var(--ink);
   border: 1px solid var(--hairline);
-  padding: 16px 18px 18px;
+  padding: 14px 16px 14px;
   transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
@@ -586,8 +616,8 @@ a.work-card:hover {
 .work-thumb {
   background: #FAFAFA;
   border: 1px solid var(--hairline);
-  margin: 0 0 14px;
-  height: 170px;
+  margin: 0 0 10px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -619,14 +649,14 @@ a.work-card:hover {
   font-weight: 600;
   letter-spacing: 0.14em;
   color: var(--muted);
-  margin: 0 0 8px;
+  margin: 0 0 6px;
 }
 
 .work-title {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -634,16 +664,16 @@ a.work-card:hover {
 }
 
 .work-stamp {
-  font-size: 10.5px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   font-weight: 600;
 }
 
 .work-body {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--muted);
-  line-height: 1.5;
-  margin: 0 0 12px;
+  line-height: 1.45;
+  margin: 0 0 8px;
 }
 
 .work-link {
@@ -670,11 +700,11 @@ a.work-card:hover {
    ========================================================= */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr 1fr;
+  grid-template-columns: 1fr 1.25fr 0.85fr;
   gap: 28px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   align-items: start;
-  max-width: 1180px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -727,6 +757,15 @@ a.work-card:hover {
   margin: 0 0 12px;
 }
 
+.committee-intro {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  margin: -4px 0 14px;
+  line-height: 1.5;
+  max-width: 520px;
+}
+
 .committee-list,
 .connect-list {
   list-style: none;
@@ -735,10 +774,18 @@ a.work-card:hover {
 }
 
 .committee-list li {
-  margin-bottom: 11px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.committee-list li:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .committee-list .role {
@@ -750,10 +797,64 @@ a.work-card:hover {
 }
 
 .committee-list .name {
-  font-size: 15.5px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--ink);
   letter-spacing: -0.01em;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.name {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+  width: fit-content;
+}
+
+a.name:hover {
+  border-bottom-color: var(--ink);
+}
+
+.committee-list .credential {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: 1px;
+}
+
+.committee-list .credential em {
+  font-style: italic;
+}
+
+/* Vertical social list */
+.about-section-label-spaced {
+  margin-top: 18px;
+}
+
+.social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list li {
+  margin-bottom: 6px;
+}
+
+.social-list li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  letter-spacing: -0.005em;
+  display: inline-block;
+}
+
+.social-list li a:hover {
+  text-decoration-thickness: 2px;
+  background: var(--accent-yellow-soft);
 }
 
 .connect-list li {
@@ -970,12 +1071,13 @@ a.connect-value:hover, .connect-value a:hover {
   .home-hero { text-align: center; padding-top: 4px; }
 
   .kicker {
-    font-size: 9px;
-    letter-spacing: 0.08em;
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
     margin-bottom: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: clip;
+    white-space: normal;
+    line-height: 1.4;
+    text-wrap: balance;
+    padding: 0 6px;
   }
 
   .display-title {
@@ -1096,7 +1198,7 @@ a.connect-value:hover, .connect-value a:hover {
   }
 
   /* ROAD — vertical only */
-  #road .page-head { margin-bottom: 12px; }
+  #road .page-head { margin-bottom: 8px; }
 
   #road .page-subhead {
     font-size: 12.5px;
@@ -1106,7 +1208,7 @@ a.connect-value:hover, .connect-value a:hover {
 
   .timeline-vertical {
     list-style: none;
-    margin: 6px auto 14px;
+    margin: 4px auto 8px;
     padding: 0;
     position: relative;
     max-width: 320px;
@@ -1126,18 +1228,18 @@ a.connect-value:hover, .connect-value a:hover {
   .vt-event {
     position: relative;
     text-align: center;
-    padding: 12px 0 12px;
+    padding: 6px 0 6px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 1px;
   }
 
   .vt-dot {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
     border-radius: 50%;
-    margin: 0 auto 8px;
+    margin: 0 auto 4px;
     position: relative;
     z-index: 1;
     background: var(--bg);
@@ -1154,28 +1256,30 @@ a.connect-value:hover, .connect-value a:hover {
   }
 
   .vt-meta {
-    font-size: 10.5px;
+    font-size: 10px;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.13em;
     color: var(--muted);
     text-transform: uppercase;
   }
 
   .vt-title {
-    font-size: 17px;
+    font-size: 15.5px;
     font-weight: 700;
     letter-spacing: -0.015em;
     color: var(--ink);
-    margin-top: 2px;
+    margin-top: 0;
+    line-height: 1.2;
   }
 
   .vt-detail {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--muted);
+    line-height: 1.3;
   }
 
   .vt-thread {
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--muted-2);
     font-style: italic;
   }
@@ -1201,8 +1305,8 @@ a.connect-value:hover, .connect-value a:hover {
   .work-body { font-size: 13px; }
   .work-cta-row .btn { font-size: 12.5px; padding: 12px 12px; }
 
-  /* ABOUT — fully centered */
-  #about .page-head { margin-bottom: 16px; }
+  /* ABOUT — fully centered, compact */
+  #about .page-head { margin-bottom: 12px; }
   #about .page-title {
     font-size: 24px;
     line-height: 1.18;
@@ -1211,16 +1315,17 @@ a.connect-value:hover, .connect-value a:hover {
   }
   #about .page-subhead { font-size: 13px; }
 
-  .about-grid { gap: 22px; }
+  .about-grid { gap: 18px; }
 
   .about-bio { text-align: center; }
 
-  .bio-row { justify-content: center; gap: 10px; }
+  .bio-row { justify-content: center; gap: 10px; margin-bottom: 10px; }
 
   .bio-paragraph {
     font-size: 13px;
-    line-height: 1.55;
+    line-height: 1.5;
     text-align: center;
+    margin-bottom: 8px;
   }
 
   .about-committee,
@@ -1228,17 +1333,48 @@ a.connect-value:hover, .connect-value a:hover {
     text-align: center;
   }
 
-  .committee-list li,
+  .committee-intro {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 12.5px;
+    margin-bottom: 10px;
+  }
+
+  .committee-list li {
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
   .connect-list li {
     align-items: center;
   }
 
-  .connect-value {
+  .committee-list .credential {
     text-align: center;
-    line-height: 1.7;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
   }
 
-  .citation-text { font-size: 12px; text-align: center; }
+  a.name { width: auto; }
+
+  .connect-value {
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .social-list {
+    text-align: center;
+  }
+
+  .social-list li {
+    margin-bottom: 5px;
+  }
+
+  .citation-text { font-size: 11.5px; text-align: center; line-height: 1.5; }
 
   /* FOOTER on mobile */
   .footer-text { display: none; }
