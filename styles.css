@@ -116,7 +116,7 @@ main {
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: clamp(20px, 3vw, 36px) var(--gutter) clamp(20px, 3vw, 36px);
+  padding: clamp(14px, 2.2vw, 28px) var(--gutter) clamp(14px, 2.2vw, 28px);
 }
 
 .tab-content { display: none; }
@@ -129,7 +129,7 @@ main {
    ========================================================= */
 .page-head {
   text-align: center;
-  margin-bottom: clamp(20px, 2.5vw, 32px);
+  margin-bottom: clamp(14px, 1.8vw, 24px);
 }
 
 .kicker {
@@ -138,7 +138,7 @@ main {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
-  margin: 0 0 18px;
+  margin: 0 0 12px;
 }
 
 .page-title {
@@ -146,7 +146,7 @@ main {
   font-weight: 700;
   letter-spacing: -0.035em;
   line-height: 1.02;
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
 .page-title em { font-style: italic; font-weight: 700; }
@@ -154,9 +154,9 @@ main {
 .page-subhead {
   font-size: clamp(16px, 1.6vw, 19px);
   color: var(--muted);
-  margin: 0 auto 6px;
+  margin: 0 auto 4px;
   max-width: 900px;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 .page-subhead em { font-style: italic; }
@@ -164,7 +164,7 @@ main {
 .page-subnote {
   font-size: 13px;
   color: var(--muted-2);
-  margin: 4px auto 0;
+  margin: 2px auto 0;
   max-width: 700px;
 }
 
@@ -180,7 +180,7 @@ main {
   text-align: center;
   max-width: 920px;
   margin: 0 auto;
-  padding-top: clamp(8px, 1.5vw, 18px);
+  padding-top: 0;
 }
 
 .display-title {
@@ -188,7 +188,7 @@ main {
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
-  margin: 14px 0 18px;
+  margin: 8px 0 12px;
   white-space: nowrap;
 }
 
@@ -197,7 +197,7 @@ main {
 .dissertation-subhead {
   font-size: clamp(20px, 2.0vw, 26px);
   color: var(--ink);
-  margin: 0 auto 6px;
+  margin: 0 auto 4px;
   font-style: italic;
   font-weight: 500;
 }
@@ -205,16 +205,16 @@ main {
 .dissertation-topic {
   font-size: clamp(17px, 1.6vw, 22px);
   color: var(--muted);
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
   font-style: italic;
 }
 
 .body-lead {
   font-size: clamp(15px, 1.35vw, 18px);
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.5;
   max-width: 980px;
-  margin: 0 auto 26px;
+  margin: 0 auto 18px;
   text-wrap: balance;
 }
 
@@ -223,7 +223,7 @@ main {
   display: flex;
   gap: 14px;
   justify-content: center;
-  margin: 0 auto 34px;
+  margin: 0 auto 22px;
   flex-wrap: wrap;
 }
 
@@ -262,9 +262,9 @@ main {
 
 /* Figure card */
 .figure-card {
-  margin: 28px auto 0;
+  margin: 14px auto 0;
   max-width: 900px;
-  padding: 22px 24px 18px;
+  padding: 18px 20px 14px;
   border: 1px solid var(--hairline);
   text-align: left;
 }
@@ -351,10 +351,10 @@ main {
 .pillars {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
+  gap: 28px;
   border-top: 1px solid var(--hairline-strong);
-  padding-top: 22px;
-  margin-bottom: 36px;
+  padding-top: 16px;
+  margin-bottom: 22px;
 }
 
 .pillar { text-align: center; }
@@ -365,15 +365,15 @@ main {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ink);
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
 .pillar-title {
   font-size: clamp(16px, 1.4vw, 19px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.32;
-  margin: 0 0 12px;
+  line-height: 1.3;
+  margin: 0 0 8px;
   text-wrap: balance;
 }
 
@@ -382,7 +382,7 @@ main {
 .pillar-body {
   font-size: 14.5px;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.5;
   margin: 0;
   text-wrap: balance;
 }
@@ -392,7 +392,7 @@ main {
 /* Foundations diagram */
 .foundations {
   border-top: 1px solid var(--hairline);
-  padding-top: 24px;
+  padding-top: 16px;
   text-align: center;
 }
 
@@ -402,7 +402,7 @@ main {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
-  margin: 0 0 14px;
+  margin: 0 0 10px;
 }
 
 .foundations-diagram {
@@ -450,7 +450,7 @@ main {
 .foundations-caption {
   font-size: 13.5px;
   color: var(--muted);
-  margin: 14px auto 0;
+  margin: 8px auto 0;
   max-width: 1280px;
   white-space: nowrap;
   overflow: hidden;
@@ -461,7 +461,7 @@ main {
    ROAD TAB
    ========================================================= */
 .timeline-wrap.timeline-horizontal {
-  margin: 32px auto 40px;
+  margin: 16px auto 16px;
   max-width: 1400px;
   width: 100%;
 }
@@ -469,25 +469,19 @@ main {
 .timeline-horizontal svg {
   width: 100%;
   height: auto;
-  max-height: 580px;
+  max-height: 380px;
 }
 
-/* Road tab fills viewport vertically so it doesn't feel bottom-empty */
-#road.active {
-  display: flex;
-  flex-direction: column;
-  min-height: 70vh;
+#road .page-subhead {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: normal;
 }
 
-#road .page-head {
-  flex: 0 0 auto;
-}
-
+/* Road tab — clean, compact, no flex-stretch white space */
 #road .timeline-wrap.timeline-horizontal {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 12px auto 8px;
 }
 
 #road .timeline-wrap.timeline-horizontal svg {
@@ -495,9 +489,8 @@ main {
 }
 
 #road .legend {
-  flex: 0 0 auto;
-  margin-top: 12px;
-  margin-bottom: 8px;
+  margin-top: 6px;
+  margin-bottom: 4px;
 }
 
 .year-tick line { stroke: var(--ink); stroke-width: 1; }
@@ -517,27 +510,27 @@ main {
 }
 
 .event-meta {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
   fill: var(--muted);
 }
 
 .event-title {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 700;
   letter-spacing: -0.015em;
   fill: var(--ink);
 }
 
 .event-detail {
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 400;
   fill: var(--muted);
 }
 
 .event-thread {
-  font-size: 14px;
+  font-size: 13px;
   fill: var(--muted-2);
 }
 
@@ -701,8 +694,8 @@ a.work-card:hover {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr 0.85fr;
-  gap: 28px;
-  margin-bottom: 16px;
+  gap: 24px;
+  margin-bottom: 12px;
   align-items: start;
   max-width: 1200px;
   margin-left: auto;
@@ -1006,7 +999,8 @@ a.connect-value:hover, .connect-value a:hover {
 
   .about-connect { border-bottom: 0; }
 
-  .timeline-horizontal { display: none; }
+  #road .timeline-wrap.timeline-horizontal,
+  .timeline-horizontal { display: none !important; }
   .timeline-vertical { display: block; }
 
   .work-grid {
@@ -1065,15 +1059,15 @@ a.connect-value:hover, .connect-value a:hover {
 
   /* HOME on mobile */
   main {
-    padding: 14px var(--gutter) 18px;
+    padding: 10px var(--gutter) 14px;
   }
 
-  .home-hero { text-align: center; padding-top: 4px; }
+  .home-hero { text-align: center; padding-top: 0; }
 
   .kicker {
     font-size: 9.5px;
     letter-spacing: 0.06em;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     white-space: normal;
     line-height: 1.4;
     text-wrap: balance;
@@ -1123,8 +1117,8 @@ a.connect-value:hover, .connect-value a:hover {
 
   /* Figure card */
   .figure-card {
-    padding: 14px 12px 12px;
-    margin-top: 18px;
+    padding: 12px 12px 10px;
+    margin-top: 12px;
   }
 
   .figure-title {
@@ -1139,7 +1133,7 @@ a.connect-value:hover, .connect-value a:hover {
   }
 
   /* PAGE HEADS */
-  .page-head { margin-bottom: 18px; }
+  .page-head { margin-bottom: 12px; }
 
   .page-title {
     font-size: 34px;
